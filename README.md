@@ -53,3 +53,15 @@ R1_T07_02_Niz_Z020_Histogram
 [14.186, 14.690): 3	*************
 
 
+*********
+BAT датотека: 
+R1_T07_02_Niz_Z020_Histogram.exe < case-1.in > 001.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-2.in > 002.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-3.in > 003.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-4.in > 004.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-5.in > 005.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-6.in > 006.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-7.in > 007.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-8.in > 008.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-9.in > 009.txt
+R1_T07_02_Niz_Z020_Histogram.exe < case-10.in > 010.txt
