@@ -19,7 +19,7 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
     static void Main()
     {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;     // Kultura je nezavisna od jezika ili regiona i koristi se za standardizovano formatiranje i parsiranje podataka brojeva i datuma
-        Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;   // za tekstualne podatke
+        // Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;   // za tekstualne podatke
 
         Histogram();
         // Real_double_Zaokruzivanje();
