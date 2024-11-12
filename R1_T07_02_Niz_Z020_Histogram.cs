@@ -11,30 +11,35 @@
 // 1 WA
 
 using System;
-using System.Globalization;
+using System.Globalization;     // Zbog kulture koja je nezavisna od jezika ili regiona i koristi se za standardizovano formatiranje i parsiranje podataka
+using System.Threading;         // Zbog kulture da bi vazila za ceo program, osim ako se pokrenu novi tokovi
 
 class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
 {
     static void Main()
     {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;     // Kultura je nezavisna od jezika ili regiona i koristi se za standardizovano formatiranje i parsiranje podataka brojeva i datuma
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;   // za tekstualne podatke
+
         Histogram();
         // Real_double_Zaokruzivanje();
     }
 
     static void Histogram()
     {
-        string[] s = Console.ReadLine().Split();            // Ucitavamo granice intervala
-        double a = double.Parse(s[0], CultureInfo.InvariantCulture);
-        double b = double.Parse(s[1], CultureInfo.InvariantCulture);
 
-        int n = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);              // Ucitavamo broj podeoka
+        string[] s = Console.ReadLine().Split();            // Ucitavamo granice intervala
+        double a = double.Parse(s[0]);                      // double a = double.Parse(s[0], CultureInfo.InvariantCulture);
+        double b = double.Parse(s[1]);                      // double b = double.Parse(s[1], CultureInfo.InvariantCulture);
+
+        int n = int.Parse(Console.ReadLine());              // Ucitavamo broj podeoka
         double dx = (b - a) / n;                            // Izracunavamo sirinu jednog podeoka
         int[] histogram = new int[n];                       // Histogram cuva broj tacaka u svakom podeoku
 
         int k = int.Parse(Console.ReadLine());              // Ucitavamo ukupan broj tacaka
         for (int i = 0; i < k; i++)
         {
-            double x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);    // Ucitavamo sledecu tacku
+            double x = double.Parse(Console.ReadLine());    // Ucitavamo sledecu tacku
             int podeok = (int)((x - a) / dx);               // Odredjujemo podeok kojem ona pripada
             histogram[podeok]++;                            // Uvecavamo broj tacaka u tom podeoku histograma
         }
@@ -49,7 +54,8 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
             // double d = Math.Floor((t + dx) * 10000) / 10000;
             double l = t;
             double d = t + dx;
-            Console.Write("[" + l.ToString("F3", CultureInfo.InvariantCulture) + ", " + d.ToString("F3", CultureInfo.InvariantCulture) + "): ");                    // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
+            Console.Write("[" + l.ToString("F3") + ", " + d.ToString("F3") + "): ");                    // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
+            // Console.Write("[" + l.ToString("F3", CultureInfo.InvariantCulture) + ", " + d.ToString("F3", CultureInfo.InvariantCulture) + "): ");                    // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
 
             Console.Write(histogram[i] + "\t");                                                         // Ispisujemo broj tacaka u tekucem podeoku
             // Ispisujemo zvezdice
@@ -81,6 +87,7 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
             // Console.WriteLine(t);
             Console.Write(i + ". " + Test_Primer_6_OUT[i + 1].ToString("00.000") + ": ");
             Console.Write(t.ToString("00.000") + " " + t.ToString("00.0000") + " " + t.ToString("00.00000") + " ");
+            Console.Write(t.ToString("F3" + " "));
             Console.Write(t.ToString("F3", CultureInfo.InvariantCulture) + " ");
             Console.Write(t.ToString("F3", ci) + " ");
             Console.Write(t.ToString("N3") + " ");
