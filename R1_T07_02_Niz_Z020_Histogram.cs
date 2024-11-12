@@ -32,7 +32,7 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
         double t = a;
         foreach (int h in histogram)
         {
-            Console.Write("[" + t.ToString("0.000") + ", " + (t + dx).ToString("0.000") + "): ");             // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
+            Console.Write("[" + t.ToString("F3") + ", " + (t + dx).ToString("F3") + "): ");             // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
             Console.Write(h + "\t");                                                                    // Ispisujemo broj tacaka u tekucem podeoku
             // Ispisujemo zvezdice
             double procenat = (double)h / (double)k;
