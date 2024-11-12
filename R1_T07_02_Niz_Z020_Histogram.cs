@@ -12,44 +12,34 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
 {
     static void Main()
     {
-        // ucitavamo granice intervala
-        string[] str = Console.ReadLine().Split();
-        double a = double.Parse(str[0]);
-        double b = double.Parse(str[1]);
-        // ucitavamo broj podeoka
-        int n = int.Parse(Console.ReadLine());
-        // izracunavamo sirinu jednog podeoka
-        double dx = (b - a) / n;
-        // histogram cuva broj tacaka u svakom podeoku
-        int[] histogram = new int[n];
-        // ucitavamo ukupan broj tacaka
-        int k = int.Parse(Console.ReadLine());
+        string[] s = Console.ReadLine().Split();            // Ucitavamo granice intervala
+        double a = double.Parse(s[0]);
+        double b = double.Parse(s[1]);
+        
+        int n = int.Parse(Console.ReadLine());              // Ucitavamo broj podeoka
+        double dx = (b - a) / n;                            // Izracunavamo sirinu jednog podeoka
+        int[] histogram = new int[n];                       // Histogram cuva broj tacaka u svakom podeoku
+
+        int k = int.Parse(Console.ReadLine());              // Ucitavamo ukupan broj tacaka
         for (int i = 0; i < k; i++)
         {
-            // ucitavamo sledecu tacku
-            double x = double.Parse(Console.ReadLine());
-            // odredjujemo podeok kojem ona pripada
-            int podeok = (int)((x - a) / dx);
-            // uvecavamo broj tacaka u tom podeoku histograma
-            histogram[podeok]++;
+            double x = double.Parse(Console.ReadLine());    // Ucitavamo sledecu tacku
+            int podeok = (int)((x - a) / dx);               // Odredjujemo podeok kojem ona pripada
+            histogram[podeok]++;                            // Uvecavamo broj tacaka u tom podeoku histograma
         }
-        // ispisujemo histogram
+
+        // Ispisujemo histogram
         double t = a;
         foreach (int h in histogram)
         {
-            // ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
-            Console.Write("[" + t.ToString("0.000") + ", " +
-                          (t + dx).ToString("0.000") + "): ");
-            // ispisujemo broj tacaka u tekucem podeoku
-            Console.Write(h + "\t");
-            // ispisujemo zvezdice
+            Console.Write("[" + t.ToString("0.000") + ", " + (t + dx).ToString("0.000") + "): ");             // Ispisujemo granice tekuceg podeoka (zaokruzene na tri decimale)
+            Console.Write(h + "\t");                                                                    // Ispisujemo broj tacaka u tekucem podeoku
+            // Ispisujemo zvezdice
             double procenat = (double)h / (double)k;
             int brojZvezdica = (int)Math.Round(100 * procenat);
-            for (int i = 0; i < brojZvezdica; i++)
-                Console.Write("*");
+            for (int i = 0; i < brojZvezdica; i++) Console.Write("*");
             Console.WriteLine();
-            // prelazimo na naredni podeok
-            t += dx;
+            t = t + dx;        // Prelazimo na naredni podeok
         }
     }
 }
