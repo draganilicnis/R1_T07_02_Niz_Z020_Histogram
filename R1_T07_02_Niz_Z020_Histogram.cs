@@ -4,10 +4,11 @@
 // https://arena.petlja.org/competition/r1-07-nizovi-05-preslikavanja#tab_132994
 // https://arena.petlja.org/competition/r1-07-nizovi-04-vektori-polinomi#tab_132710
 // https://arena.petlja.org/competition/skola-od-kuce-nizovi1-zadaci#tab_97594
+// 1 WA
 
 using System;
 
-class Program
+class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
 {
     static void Main()
     {
