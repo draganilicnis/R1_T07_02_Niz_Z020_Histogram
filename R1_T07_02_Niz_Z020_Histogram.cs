@@ -60,7 +60,7 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
             Console.Write(histogram[i] + "\t");                                                         // Ispisujemo broj tacaka u tekucem podeoku
             // Ispisujemo zvezdice
             double procenat = (double)histogram[i] / (double)k;
-            int brojZvezdica = (int)Math.Round(100 * procenat);
+            int brojZvezdica = (int)Math.Round(100 * procenat, MidpointRounding.AwayFromZero);
             for (int z = 0; z < brojZvezdica; z++) Console.Write("*");
             Console.WriteLine();
             t = t + dx;        // Prelazimo na naredni podeok
@@ -68,8 +68,8 @@ class R1_T07_02_Niz_Z020_Histogram_01_WA_Ver_000
     }
     static void Real_double_Zaokruzivanje()
     {
-        Console.InputEncoding = System.Text.Encoding.Unicode;
-        Console.OutputEncoding = System.Text.Encoding.Unicode;       
+        // Console.InputEncoding = System.Text.Encoding.Unicode;    // Nije potrebno - nema efekta u ovom zadatku
+        // Console.OutputEncoding = System.Text.Encoding.Unicode;   // Nije potrebno - nema efekta u ovom zadatku    
         // WA 1 Test primer 6
         // double[] Test_Primer_6_OUT = new double[8 + 1];
         double[] Test_Primer_6_OUT = { 8.230, 8.586, 8.942, 9.299, 9.655, 10.011, 10.367, 10.724, 11.080 };
