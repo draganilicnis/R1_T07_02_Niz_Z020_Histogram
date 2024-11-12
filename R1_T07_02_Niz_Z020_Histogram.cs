@@ -1,7 +1,7 @@
 // https://petlja.org/sr-Latn-RS/kurs/14606/33/2763
 // https://petlja.org/sr-Cyrl-RS/kurs/14606/6/1322
-// https://petlja.org/biblioteka/r/problemi/Zbirka/histogram
 // https://petlja.org/biblioteka/r/problemi/Zbirka-stara/histogram
+// https://www.petlja.org/sr-Latn-RS/biblioteka/r/Zbirka/histogram
 // https://arena.petlja.org/competition/r1-07-nizovi-05-preslikavanja#tab_132994
 // https://arena.petlja.org/competition/r1-07-nizovi-04-vektori-polinomi#tab_132710
 // https://arena.petlja.org/competition/skola-od-kuce-nizovi1-zadaci#tab_97594
